@@ -1,0 +1,25 @@
+body{
+    background-color: lightcoral;
+}
+
+.title{
+    color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    letter-spacing: 0.5em;
+    line-height: 1em;
+}
+
+#content{
+    color: gray;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    letter-spacing: normal;
+    line-height: 1em;
+}
+
+#adviceBtn{
+    color: rgb(35, 33, 30);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+}
