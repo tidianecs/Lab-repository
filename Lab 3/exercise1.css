@@ -1,0 +1,8 @@
+div{
+    background-color: bisque;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:cadetblue;
+    padding: 2em;
+    margin: 1em;
+    border: 2px cadetblue solid;
+}

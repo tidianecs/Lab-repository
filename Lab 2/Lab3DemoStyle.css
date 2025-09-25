@@ -1,0 +1,13 @@
+.blueP {
+    color: blue;
+}
+
+#myId{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blueviolet;
+}
+
+#pId{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+}

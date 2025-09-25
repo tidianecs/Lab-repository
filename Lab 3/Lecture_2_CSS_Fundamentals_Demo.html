@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Fundamentals - Demonstration</title>
+    <style>
+      /* Global Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(to bottom, #f5f7fa, #e4e7eb);
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 30px;
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        color: #3498db;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+        margin-top: 30px;
+      }
+
+      section {
+        background: white;
+        padding: 25px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .example-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .example {
+        flex: 1;
+        min-width: 300px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #3498db;
+      }
+
+      .code {
+        background: #2d3a4b;
+        color: #e2e8f0;
+        padding: 15px;
+        border-radius: 6px;
+        overflow-x: auto;
+        margin: 15px 0;
+        font-family: "Courier New", monospace;
+      }
+
+      .visualization {
+        background: white;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        margin: 15px 0;
+      }
+
+      .box-model-demo {
+        width: 300px;
+        height: 150px;
+        margin: 20px auto;
+        position: relative;
+      }
+
+      .box-model-margin {
+        background-color: rgba(255, 204, 0, 0.2);
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        border: 1px dashed #ffcc00;
+      }
+
+      .box-model-border {
+        background-color: rgba(0, 153, 255, 0.2);
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border: 2px solid #0099ff;
+      }
+
+      .box-model-padding {
+        background-color: rgba(0, 204, 102, 0.2);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px dashed #00cc66;
+      }
+
+      .box-model-content {
+        background-color: rgba(255, 102, 102, 0.2);
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ff6666;
+      }
+
+      .display-demo div {
+        margin: 10px 0;
+        padding: 10px;
+        background: #e8f4fc;
+      }
+
+      .inline-demo span {
+        background: #ffe6cc;
+        padding: 5px;
+      }
+
+      .inline-block-demo span {
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+        background: #d4edda;
+        text-align: center;
+        line-height: 40px;
+        margin: 5px;
+      }
+
+      .position-demo {
+        position: relative;
+        height: 200px;
+        border: 1px solid #ddd;
+        margin: 20px 0;
+        background: #f8f9fa;
+      }
+
+      .position-box {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .static {
+        background: #6c757d;
+      }
+      .relative {
+        background: #007bff;
+        position: relative;
+        top: 20px;
+        left: 30px;
+      }
+      .absolute {
+        background: #dc3545;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      .fixed {
+        background: #fd7e14;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .float-demo {
+        border: 2px solid #6f42c1;
+        padding: 15px;
+        margin: 20px 0;
+        overflow: auto;
+      }
+
+      .float-left {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background: #d1ecf1;
+        margin: 0 15px 15px 0;
+      }
+
+      .float-right {
+        float: right;
+        width: 100px;
+        height: 100px;
+        background: #f8d7da;
+        margin: 0 0 15px 15px;
+      }
+
+      .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .pseudo-demo a {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+
+      .pseudo-demo a:hover {
+        background: #0056b3;
+      }
+
+      .pseudo-demo p::first-letter {
+        font-size: 2rem;
+        color: #28a745;
+        font-weight: bold;
+      }
+
+      .pseudo-demo p::selection {
+        background: #ffc107;
+        color: black;
+      }
+
+      .units-demo div {
+        margin: 10px 0;
+        background: #e9ecef;
+        padding: 10px;
+      }
+
+      .pixel-unit {
+        width: 200px;
+        background: #d4edda;
+      }
+
+      .percent-unit {
+        width: 50%;
+        background: #cce5ff;
+      }
+
+      .viewport-unit {
+        width: 50vw;
+        background: #fff3cd;
+      }
+
+      .color-demo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 20px 0;
+      }
+
+      .color-box {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        background: #343a40;
+        color: white;
+        border-radius: 10px;
+      }
+
+      .interactive-controls {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 15px 0;
+      }
+
+      .interactive-box {
+        width: 150px;
+        height: 150px;
+        background: #007bff;
+        margin: 15px auto;
+        transition: all 0.3s ease;
+      }
+
+      .toggle-container {
+        display: flex;
+        gap: 15px;
+        margin: 15px 0;
+      }
+
+      .toggle-btn {
+        padding: 8px 15px;
+        background: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .toggle-btn:hover {
+        background: #5a6268;
+      }
+
+      /* Combinator Selectors */
+      .combinator-demo div p {
+        background: #e8f4fc;
+      }
+      .combinator-demo ul > li {
+        font-weight: bold;
+        color: #ffc107;
+      }
+      .combinator-demo h3 ~ p {
+        color: #00cc66;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .combinator-demo h3 + p {
+        font-style: italic;
+      }
+
+      /* Attribute Selectors */
+      .attribute-demo input[type] {
+        border: 2px solid #3498db;
+      }
+      .attribute-demo input[type="text"] {
+        background: #f0f8ff;
+      }
+      .attribute-demo a[href^="https"] {
+        color: #28a745;
+      }
+      .attribute-demo div[class*="btn"] {
+        border: 1px solid red;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>CSS Fundamentals Demonstration</h1>
+      <p>Interactive examples of some CSS concepts</p>
+    </header>
+
+    <section id="what-is-css">
+      <h2>What is CSS?</h2>
+      <p>
+        CSS (Cascading Style Sheets) is a stylesheet language that describes the
+        presentation of HTML documents.
+      </p>
+
+      <div class="example-container">
+        <div class="example">
+          <h3>Without CSS</h3>
+          <div class="code">
+            &lt;h1&gt;&lt;font color="red"&gt;Welcome&lt;/font&gt;&lt;/h1&gt;
+          </div>
+          <div class="visualization">
+            <h1><font color="red">Welcome</font></h1>
+          </div>
+        </div>
+
+        <div class="example">
+          <h3>With CSS</h3>
+          <div class="code">
+            &lt;h1 class="title"&gt;Welcome&lt;/h1&gt;<br /><br />
+            .title {<br />
+            &nbsp;&nbsp;color: red;<br />
+            &nbsp;&nbsp;font-family: Arial;<br />
+            }
+          </div>
+          <div class="visualization">
+            <h1 style="color: red; font-family: Arial">Welcome</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="css-syntax">
+      <h2>CSS Syntax</h2>
+      <p>
+        A CSS rule consists of a selector and a declaration block with
+        property:value pairs.
+      </p>
+
+      <div class="code">
+        selector {<br />
+        &nbsp;&nbsp;property: value;<br />
+        &nbsp;&nbsp;property: value;<br />
+        }
+      </div>
+
+      <div class="visualization">
+        <div style="text-align: center; font-family: monospace; line-height: 2">
+          <span style="color: #e74c3c">h1</span> {<br />
+          &nbsp;&nbsp;<span style="color: #3498db">color</span>:
+          <span style="color: #2ecc71">blue</span>;<br />
+          &nbsp;&nbsp;<span style="color: #3498db">font-size</span>:
+          <span style="color: #2ecc71">24px</span>;<br />
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="applying-css">
+      <h2>Applying CSS</h2>
+
+      <div class="example-container">
+        <div class="example">
+          <h3>Inline CSS</h3>
+          <div class="code">
+            &lt;h1 style="color: red; margin: 10px;"&gt;Welcome&lt;/h1&gt;
+          </div>
+          <div class="visualization">
+            <h1 style="color: red; margin: 10px">Welcome</h1>
+          </div>
+        </div>
+
+        <div class="example">
+          <h3>Internal CSS</h3>
+          <div class="code">
+            &lt;head&gt;<br />
+            &nbsp;&nbsp;&lt;style&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;h1 { <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: red; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin: 10px;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;&lt;/style&gt;<br />
+            &lt;/head&gt;
+          </div>
+        </div>
+
+        <div class="example">
+          <h3>External CSS</h3>
+          <div class="code">
+            &lt;head&gt;<br />
+            &nbsp;&nbsp;&lt;link rel="stylesheet" href="styles.css"&gt;<br />
+            &lt;/head&gt;<br /><br />
+            <i>/* styles.css */</i><br />
+            h1 { <br />
+            &nbsp;&nbsp;color: red; <br />
+            &nbsp;&nbsp;margin: 10px;<br />
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="box-model">
+      <h2>The Box Model</h2>
+      <p>
+        Every element in CSS is represented as a rectangular box with content,
+        padding, border, and margin.
+      </p>
+
+      <div class="box-model-demo">
+        <div class="box-model-margin">Margin</div>
+        <div class="box-model-border">Border</div>
+        <div class="box-model-padding">Padding</div>
+        <div class="box-model-content">Content</div>
+      </div>
+
+      <div class="code">
+        .box {<br />
+        &nbsp;&nbsp;width: 300px;<br />
+        &nbsp;&nbsp;padding: 20px;<br />
+        &nbsp;&nbsp;border: 5px solid #3498db;<br />
+        &nbsp;&nbsp;margin: 30px;<br />
+        }
+      </div>
+
+      <div class="interactive-controls">
+        <h3>Box-Sizing Property</h3>
+        <div class="toggle-container">
+          <button class="toggle-btn" onclick="toggleBoxSizing('content-box')">
+            content-box
+          </button>
+          <button class="toggle-btn" onclick="toggleBoxSizing('border-box')">
+            border-box
+          </button>
+        </div>
+
+        <div
+          id="box-sizing-demo"
+          style="
+            width: 300px;
+            padding: 20px;
+            border: 5px solid #3498db;
+            margin: 10px auto;
+            background: #e8f4fc;
+          "
+        >
+          This element has width: 300px, padding: 20px, and border: 5px
+        </div>
+        <p
+          id="box-size-info"
+          style="text-align: center; font-style: italic"
+        ></p>
+      </div>
+    </section>
+
+    <section id="display-visibility">
+      <h2>Display & Visibility</h2>
+
+      <div class="example-container">
+        <div class="example">
+          <h3>Block Elements</h3>
+          <div class="code">
+            div {<br />
+            &nbsp;&nbsp;display: block;<br />
+            }
+          </div>
+          <div class="visualization display-demo">
+            <div style="background: #d4edda">Block element 1</div>
+            <div style="background: #cce5ff">Block element 2</div>
+          </div>
+        </div>
+
+        <div class="example">
+          <h3>Inline Elements</h3>
+          <div class="code">
+            span {<br />
+            &nbsp;&nbsp;display: inline;<br />
+            }
+          </div>
+          <div class="visualization inline-demo">
+            <p>
+              This is <span>inline text</span> inside a paragraph. Notice how it
+              flows with the content and doesn't start on a new line.
+            </p>
+          </div>
+        </div>
+
+        <div class="example">
+          <h3>Inline-Block Elements</h3>
+          <div class="code">
+            span {<br />
+            &nbsp;&nbsp;display: inline-block;<br />
+            &nbsp;&nbsp;width: 100px;<br />
+            &nbsp;&nbsp;height: 40px;<br />
+            }
+          </div>
+          <div class="visualization inline-block-demo">
+            <span>Button 1</span>
+            <span>Button 2</span>
+            <span>Button 3</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-container">
+        <div class="example">
+          <h3>Display: None</h3>
+          <div class="code">
+            p {<br />
+            &nbsp;&nbsp;display: none;<br />
+            }
+          </div>
+          <div class="visualization">
+            <p>This paragraph is visible.</p>
+            <p style="display: none">
+              This paragraph has display: none and is completely removed from
+              layout.
+            </p>
+            <p>This paragraph follows the hidden one.</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <h3>Visibility: Hidden</h3>
+          <div class="code">
+            p {<br />
+            &nbsp;&nbsp;visibility: hidden;<br />
+            }
+          </div>
+          <div class="visualization">
+            <p>This paragraph is visible.</p>
+            <p style="visibility: hidden">
+              This paragraph has visibility: hidden but still takes up space.
+            </p>
+            <p>This paragraph follows the hidden one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="positioning">
+      <h2>Positioning</h2>
+
+      <div class="code">
+        .element {<br />
+        &nbsp;&nbsp;position: static | relative | absolute | fixed | sticky;<br />
+        &nbsp;&nbsp;top: 0;<br />
+        &nbsp;&nbsp;right: 0;<br />
+        &nbsp;&nbsp;bottom: 0;<br />
+        &nbsp;&nbsp;left: 0;<br />
+        }
+      </div>
+
+      <div class="position-demo">
+        <div class="position-box static">Static</div>
+        <div class="position-box relative">Relative</div>
+        <div class="position-box absolute">Absolute</div>
+        <div class="position-box fixed">Fixed</div>
+      </div>
+
+      <div class="interactive-controls">
+        <h3>Try It Yourself</h3>
+        <div class="toggle-container">
+          <button class="toggle-btn" onclick="changePosition('static')">
+            Static
+          </button>
+          <button class="toggle-btn" onclick="changePosition('relative')">
+            Relative
+          </button>
+          <button class="toggle-btn" onclick="changePosition('absolute')">
+            Absolute
+          </button>
+          <button class="toggle-btn" onclick="changePosition('fixed')">
+            Fixed
+          </button>
+        </div>
+
+        <div
+          style="
+            position: relative;
+            height: 150px;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+            background: #f8f9fa;
+          "
+        >
+          <div
+            id="interactive-position"
+            class="position-box"
+            style="position: static; background: #17a2b8"
+          >
+            Interactive Box
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pseudo-classes-elements">
+      <h2>Pseudo-classes & Pseudo-elements</h2>
+
+      <div class="example-container">
+        <div class="example">
+          <h3>Pseudo-classes (element state)</h3>
+          <div class="code">
+            a:hover {<br />
+            &nbsp;&nbsp;color: red;<br />
+            }<br /><br />
+            input:focus {<br />
+            &nbsp;&nbsp;border: 2px solid blue;<br />
+            }<br /><br />
+            li:first-child {<br />
+            &nbsp;&nbsp;font-weight: bold;<br />
+            }
+          </div>
+          <div class="visualization pseudo-demo">
+            <a href="#">Hover Over Me</a>
+            <input type="text" placeholder="Click to focus" />
+            <ul>
+              <li>First item (bold)</li>
+              <li>Second item</li>
+              <li>Third item</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="example">
+          <h3>Pseudo-elements (parts of elements)</h3>
+          <div class="code">
+            p::first-letter {<br />
+            &nbsp;&nbsp;font-size: 2rem;<br />
+            &nbsp;&nbsp;color: green;<br />
+            }<br /><br />
+            p::first-line {<br />
+            &nbsp;&nbsp;font-weight: bold;<br />
+            }<br /><br />
+            ::selection {<br />
+            &nbsp;&nbsp;background: yellow;<br />
+            &nbsp;&nbsp;color: black;<br />
+            }
+          </div>
+          <div class="visualization pseudo-demo">
+            <p>
+              This paragraph demonstrates the ::first-letter and ::first-line
+              pseudo-elements. Try selecting this text to see the ::selection
+              style.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="selectors">
+      <h2>Combinator & Attribute Selectors</h2>
+      <p>
+        Combinators and attribute selectors offer powerful ways to target
+        elements based on their relationships or the presence of specific
+        attributes.
+      </p>
+
+      <div class="example-container">
+        <div class="example">
+          <h3>Combinator Selectors</h3>
+          <div class="code">
+            /* Descendant Selector */<br />
+            div p {<br />
+            &nbsp;&nbsp;background: #e8f4fc;<br />
+            }<br /><br />
+            /* Child Selector */<br />
+            ul &gt; li {<br />
+            &nbsp;&nbsp;font-weight: bold;<br />
+            }<br /><br />
+            /* General Sibling Selector */<br />
+            h3 ~ p {<br />
+            &nbsp;&nbsp;color: #555;<br />
+            }<br /><br />
+            /* Adjacent Sibling Selector */<br />
+            h3 + p {<br />
+            &nbsp;&nbsp;font-style: italic;<br />
+            }
+          </div>
+          <div class="visualization combinator-demo">
+            <div style="border: dotted">
+              <p>Descendant P (inside div)</p>
+              <h5>I am a h5 in the same div</h5>
+            </div>
+
+            <ul>
+              <li>Child LI</li>
+            </ul>
+            <h3>Sibling Selectors</h3>
+            <p>Adjacent Sibling P</p>
+            <p>General Sibling P</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <h3>Attribute Selectors</h3>
+          <div class="code">
+            /* Selects all inputs with a 'type' attribute */<br />
+            input[type] {<br />
+            &nbsp;&nbsp;border: 2px solid #3498db;<br />
+            }<br /><br />
+            /* Selects type="text" inputs */<br />
+            input[type="text"] {<br />
+            &nbsp;&nbsp;background: #f0f8ff;<br />
+            }<br /><br />
+            /* Selects links with href starting with 'https' */<br />
+            a[href^="https"] {<br />
+            &nbsp;&nbsp;color: #28a745;<br />
+            }<br /><br />
+            /* Selects elements with class containing 'btn' */<br />
+            div[class*="btn"] {<br />
+            &nbsp;&nbsp;border: 1px solid red;<br />
+            }
+          </div>
+          <div class="visualization attribute-demo">
+            <input type="text" placeholder="I have a type attribute" />
+            <input type="checkbox" />
+            <a href="https://example.com">Secure Link</a>
+            <a href="http://example.com">Insecure Link</a>
+            <div class="toggle-btn">Button</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="units">
+      <h2>Units in CSS</h2>
+
+      <div class="code">
+        .container {<br />
+        &nbsp;&nbsp;font-size: 16px;<br />
+        &nbsp;&nbsp;width: 80%; /* Percentage of parent */<br />
+        }<br /><br />
+        .text {<br />
+        &nbsp;&nbsp;font-size: 1.5em; /* 24px (1.5 × 16) */<br />
+        &nbsp;&nbsp;margin: 2rem; /* Relative to root font size */<br />
+        }<br /><br />
+        .hero {<br />
+        &nbsp;&nbsp;height: 100vh; /* Full viewport height */<br />
+        &nbsp;&nbsp;width: 100vw; /* Full viewport width */<br />
+        }
+      </div>
+
+      <div class="visualization units-demo">
+        <div class="pixel-unit">This has width: 200px (pixels)</div>
+        <div class="percent-unit">
+          This has width: 50% (percentage of parent)
+        </div>
+        <div class="viewport-unit">
+          This has width: 50vw (50% of viewport width)
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <h3>CSS Fundamentals Demonstration</h3>
+      <p>
+        This interactive guide covers some CSS concepts with practical examples.
+      </p>
+    </footer>
+
+    <script>
+      // Interactive functionality for the demonstration
+      function toggleBoxSizing(type) {
+        const demo = document.getElementById("box-sizing-demo");
+        const info = document.getElementById("box-size-info");
+
+        demo.style.boxSizing = type;
+
+        if (type === "content-box") {
+          info.textContent =
+            "Total width: 300px (content) + 40px (padding) + 10px (border) = 350px";
+        } else {
+          info.textContent = "Total width: 300px (includes padding and border)";
+        }
+      }
+
+      function changePosition(position) {
+        const box = document.getElementById("interactive-position");
+        box.style.position = position;
+
+        // Reset all positional properties
+        box.style.top = "";
+        box.style.right = "";
+        box.style.bottom = "";
+        box.style.left = "";
+
+        // Set appropriate values based on position type
+        if (position === "relative") {
+          box.style.top = "20px";
+          box.style.left = "30px";
+        } else if (position === "absolute") {
+          box.style.top = "10px";
+          box.style.right = "10px";
+        } else if (position === "fixed") {
+          box.style.bottom = "20px";
+          box.style.right = "20px";
+        }
+      }
+
+      // Initialize with content-box
+      toggleBoxSizing("content-box");
+    </script>
+  </body>
+</html>

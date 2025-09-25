@@ -1,0 +1,10 @@
+div h1{
+    text-align:  center;
+    font-size: xx-large;
+    color: blueviolet;
+}
+
+div p{
+    line-height: 1em;
+    color: brown;
+}

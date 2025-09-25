@@ -1,0 +1,73 @@
+# Lab 2 HTML
+
+## Instructions
+
+Open your code editor (VS Code, Sublime, Atom, etc.).
+- Create a new folder for the project, e.g., html_lab_2.
+- For each exercise, create a separate HTML file:
+    - exercise1.html
+    - exercise2.html
+    - exercise3.html
+    - exercise4.html
+
+- Work on each file individually, following the exercise instructions below.
+
+## Exercise 1: Personal Profile Page  
+Create a basic **profile page** with:  
+- Proper structure: `<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`  
+- A `<title>` in the head section (e.g., “My Profile”)  
+- A main heading (`<h1>`) with your name  
+- A short **bio paragraph** (`<p>`) describing yourself  
+- Two smaller headings (`<h2>`) for “Hobbies” and “Skills” with lists under them:  
+  - Unordered list (`<ul>`) for hobbies  
+  - Ordered list (`<ol>`) for skills  
+
+
+## Exercise 2: Links, Media, and Navigation  
+Expand your profile page by adding:  
+- A **navigation bar** at the top using links (`<a>`) → e.g., “Home | About | Contact”  
+- A **link** to your favorite external website (open in a new tab using `target="_blank"`)  
+- An **image** (`<img>`) with an `alt` description  
+- An **audio player** (`<audio controls>`) with a sample file or placeholder link  
+- A **video player** (`<video controls>`) with a sample file or YouTube embed (iframe)  
+
+
+## Exercise 3: Tables and Semantic HTML  
+Add a **new section** “Education” with:  
+- A **table** listing your subjects/courses:  
+  - 3 columns: “Subject”, “Teacher”, “Grade”  
+  - At least 3 rows of data  
+- Use `<thead>`, `<tbody>`, and `<tfoot>`  
+- Add a “Contact Info” section using **semantic tags**:  
+  - `<address>` with your email and city  
+  - `<blockquote>` with your favorite quote  
+  - `<abbr>` for at least one abbreviation (e.g., HTML = HyperText Markup Language)  
+
+
+## Exercise 4: Forms and Advanced Inputs  
+Create a **contact form** at the bottom of your page:  
+- Inputs for:  
+  - Name (`<input type="text">`)  
+  - Email (`<input type="email">`)  
+  - Age (`<input type="number">`)  
+  - Birthday (`<input type="date">`)  
+- A **dropdown menu** (`<select>`) with at least 3 options  
+- A group of **radio buttons** (e.g., Gender: Male/Female/Other)  
+- A group of **checkboxes** (e.g., Interests: Coding, Music, Sports)  
+- A **textarea** for a message  
+- A **submit button**  
+
+## Exercise 5: Multi-Page Mini Website
+
+Create a multi-page website connecting all previous exercises:
+
+- Create separate pages: index.html, about.html, contact.html, linking them with a navigation bar on each page
+
+- Include consistent headers and footers across all pages
+
+- Add a list of projects or portfolio items with images and links on the about.html page
+- Include a table of skills and experience on the index.html page
+- Enhance the contact form from Exercise 4 by adding:
+    - Placeholder text in inputs
+    - Group inputs using <fieldset> and <legend>
+    - Add a reset button in addition to submit
