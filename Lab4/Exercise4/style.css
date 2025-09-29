@@ -1,0 +1,35 @@
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 150px;/*I increment in order to display the div 4, 5 and 6 in the same line
+                and we can't use flex-grow because of the min-width!
+    */
+}
+
+.box1{
+    min-width: 220px;
+    background-color: red;
+}
+.box2{
+    min-width: 220px;
+    background-color: blue;
+    flex-grow: 2;
+}
+.box3{
+    min-width: 220px;
+    background-color: yellow;
+    flex-grow: 3;
+}
+.box4{
+    min-width: 220px;
+    background-color: yellowgreen;
+}
+.box5{
+    min-width: 220px;
+    background-color: orange;
+}
+.box6{
+    min-width: 220px;
+    background-color: orchid;
+    
+}

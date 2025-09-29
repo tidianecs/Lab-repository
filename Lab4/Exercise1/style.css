@@ -1,0 +1,17 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.box1{
+    background-color: red;
+    padding: 20px;
+}
+.box2{
+    background-color: blue;
+    padding: 20px;
+}
+.box3{
+    background-color: green;
+    padding: 20px;
+}
