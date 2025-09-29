@@ -13,12 +13,10 @@
 .box2{
     min-width: 220px;
     background-color: blue;
-    flex-grow: 2;
 }
 .box3{
     min-width: 220px;
     background-color: yellow;
-    flex-grow: 3;
 }
 .box4{
     min-width: 220px;
