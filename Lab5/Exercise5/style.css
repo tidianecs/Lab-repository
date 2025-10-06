@@ -1,0 +1,23 @@
+section{
+    background-color: blueviolet;
+    color: white;
+    padding: 20px;
+}
+
+.orientation-container{
+    display: grid;
+    gap: 10px;
+}
+
+@media(orientation: portrait) {
+    .orientation-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media(orientation: landscape) {
+    .orientation-container{
+        grid-template-columns: repeat(2, 1fr);
+        width: 50%;
+    }
+}

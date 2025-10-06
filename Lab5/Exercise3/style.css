@@ -1,0 +1,16 @@
+.color-box{
+    color: white;
+    background-color: #3498db;
+}
+
+@media screen and (max-width: 768px) {
+    .color-box{
+        background-color: #2ecc71;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .color-box{
+        background-color: #e67e22;
+    }
+}
